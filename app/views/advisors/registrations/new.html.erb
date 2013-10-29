@@ -1,18 +1,56 @@
-<h2>Sign up to be an advisor</h2>
+	<h2>Sign up to be an advisor</h2>
+	<hr>
+<div class="row"> 
+	<div class="col-lg-6">
+		<u><h3>Required information</h3></u>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+		  <div><%= f.label :username %><br />
+		  <%= f.text_field :username, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+		  <div><%= f.label :program %><br />
+		  <%= f.text_field :program, :autofocus => true %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+		  <div><%= f.label :email %><br />
+		  <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+		  <div><%= f.label :password %><br />
+		  <%= f.password_field :password %></div>
 
-<%= render "advisors/shared/links" %>
+		  <div><%= f.label :password_confirmation %><br />
+		  <%= f.password_field :password_confirmation %></div>
+
+		  <div><%= f.submit "Sign up" %></div>
+	</div>
+	<div class="col-lg-6">
+		  <u><h3>Other information (optional)</h3></u>
+		  <div><%= f.label :country %><br />
+		  <%= f.text_field :country, :autofocus => true %></div>
+
+		  <div><%= f.label "GMAT combined score" %><br />
+		  <%= f.number_field :gmat_total, :autofocus => true %></div>
+
+		  <div><%= f.label "GMAT verbal score" %><br />
+		  <%= f.number_field :gmat_verb, :autofocus => true %></div>
+
+		  <div><%= f.label "GMAT quantitative score" %><br />
+		  <%= f.number_field :gmat_quant, :autofocus => true %></div>
+
+		  <div><%= f.label "GPA out of 4.0" %><br />
+		  <%= f.number_field :gpa, :autofocus => true %></div>
+
+		  <div><%= f.label "Industry 1" %><br />
+		  <%= f.text_field :industry1, :autofocus => true %></div>
+
+		  <div><%= f.label "Industry 2" %><br />
+		  <%= f.text_field :industry2, :autofocus => true %></div>
+
+		  <div><%= f.label "Industry 3" %><br />
+		  <%= f.text_field :industry3, :autofocus => true %></div>  
+	</div>
+		<% end %>
+
+		<%= render "advisors/shared/links" %>
+</div>

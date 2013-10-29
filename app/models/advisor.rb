@@ -10,5 +10,7 @@ class Advisor < ActiveRecord::Base
          :username, :program, :country, :gmat_total, :gmat_quant, :gmat_verb,
          :undergrad, :gpa, :industry1, :industry2, :industry3
 
-  # attr_accessible :title, :body
+  validates :username, presence: true, uniqueness: true, format: { with: /^[a-zA-Z0-9_-]+$/, message: 'Must be formatted correctly' }
+  validates :program, presence: true
+ 
 end
