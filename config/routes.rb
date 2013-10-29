@@ -1,4 +1,7 @@
 Admit::Application.routes.draw do
+  resources :questions
+
+
   devise_for :applicants
 
   root to: "welcome#index"
