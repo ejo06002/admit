@@ -41,7 +41,7 @@ before_filter :authenticate_applicant!
   # POST /questions
   # POST /questions.json
   def create
-    @question = Question.new(params[:question])
+    @question = current_applicant.questions.new(params[:question])
 
     respond_to do |format|
       if @question.save
