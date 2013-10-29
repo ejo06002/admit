@@ -1,11 +1,11 @@
 <h1>Showing this question</h1>
 
-<p id="notice"><%= notice %></p>
+
 
   
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= @question.applicant.email %> <%= @question.subject %></h3>
+        <h3 class="panel-title"><strong><%= @question.applicant.username %>:</strong> <%= @question.subject %></h3>
       </div>
       <div class="panel-body">
         <%= @question.q_content %>
@@ -17,8 +17,5 @@
         <%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     </div>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
 
 
