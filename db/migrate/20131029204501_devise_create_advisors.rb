@@ -1,6 +1,19 @@
 class DeviseCreateAdvisors < ActiveRecord::Migration
   def change
     create_table(:advisors) do |t|
+      
+      t.string :username
+      t.string :program
+      t.string :country
+      t.integer :gmat_total
+      t.integer :gmat_quant
+      t.integer :gmat_verb
+      t.string :undergrad
+      t.integer :gpa
+      t.string :industry1
+      t.string :industry2
+      t.string :industry3
+
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
