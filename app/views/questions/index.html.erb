@@ -1,8 +1,8 @@
 <h1>All Questions</h1>
-<%= link_to 'New Question', new_question_path, class: "btn btn-success" %>
+<%= link_to 'New Question', new_question_path, class: "btn btn-default" %>
 
   <% @questions.each do |question| %>
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title"><%= question.subject %></h3>
       </div>
