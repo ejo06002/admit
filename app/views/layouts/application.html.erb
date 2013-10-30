@@ -17,14 +17,21 @@
 			<li><%= link_to "All questions", questions_path %></li>
 		</ul>	
 		
+ 	
+
+
 		<ul class="nav navbar-nav pull-right">
 			<% if current_applicant.present? %>
 				<li><%= link_to current_applicant.email, edit_applicant_registration_path %></li>
 				<li><%= link_to "Sign Out", destroy_applicant_session_path, :method => :delete %></li>
-
+			<% elsif current_advisor.present?%>
+				<li><%= link_to current_advisor.email, edit_advisor_registration_path %></li>
+				<li><%= link_to "Sign Out", destroy_advisor_session_path, :method => :delete %></li>
 			<% else %>
-				<li><%= link_to "Sign up", new_applicant_registration_path %></li>
-				<li><%= link_to "Log in", new_applicant_session_path %></li>
+				<li><%= link_to "Sign up as applicant", new_applicant_registration_path %></li>
+				<li><%= link_to "Log in as applicant", new_applicant_session_path %></li>
+				<li><%= link_to "Sign up as an MBA advisor", new_advisor_registration_path %></li>
+				<li><%= link_to "Log in as an MBA advisor", new_advisor_session_path %></li>
 			<% end %>
 		</ul>
 	</div>
